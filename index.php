@@ -10,6 +10,9 @@
     $Activite = $resultats->fetchAll(); // Récupération des résultats
     $resultats->closeCursor();
 
+
+    
+
 ?>
 
 
