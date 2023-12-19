@@ -1,4 +1,27 @@
 <!DOCTYPE html>
+
+<?php 
+   include ("../config/configuration.php"); // Inclusion du fichier de configuration
+   $bdd = new PDO($dsn, $user, $password); // Connexion à la base de données
+   $requete = 'SELECT * FROM `activite` ORDER BY horaire_deb';
+   $resultats = $bdd->query($requete);
+   $Activite = $resultats->fetchAll(); // Récupération des résultats
+   $resultats->closeCursor();
+
+   $nbACTIS=count($Activite);
+
+
+  if(isset($_GET['idact'])){
+    $idact=$_GET['idact'];
+    $requete='SELECT * FROM activite WHERE Id_activite='.$idact;
+    $resultats= $bdd -> query($requete);
+    $act = $resultats -> fetchAll();
+    $resultats -> closeCursor();
+
+
+  }
+?>
+
 <html>
 <head>
   <meta charset="UTF-8">
@@ -11,6 +34,42 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <h1>Les activités</h1>
+    <?php if(isset($_GET['idact'])){ ?>
+    <div id="infoact">
+      <h2>Information sur l'activité</h2>
+    
+      <?php
+            echo '<div> le nom de l\'activité'.$act[0]["nom"].'</div>'."\n";    
+            echo '<div> La description de l\'activité'.$act[0]["description"].'</div>'."\n";   
+            echo '<div> description courte'.$act[0]["minidesc"].'</div>'."\n";   
+            echo '<div> date'.$act[0]["date"].'</div>'."\n";
+            echo '<div> horaire deb '.$act[0]["horaire_deb"].'</div>'."\n";
+            echo '<div> horaire fin '.$act[0]["horaire_fin"].'</div>'."\n";
+        ?>
+    </div>
+    <?php } ?>
+
+
+    <input type="submit" value="suppr"/>
+    <input type="submit" value="modifier"/>
+
+    
+    <h2>Liste des activités</h2>
+    <form method="GET">
+      <select name="idact" size="5">
+        <?php
+          for($i=0;$i<$nbACTIS;$i++){
+            echo '<option value="'.$Activite[$i]["Id_activite"].'">'.$Activite[$i]["nom"].$Activite[$i]["Id_activite"].'</option>'."\n";
+          }
+        ?>
+      </select></br>
+      <input type="submit" value="Voir Ressources">
+    </form>
+
+    <h1> De nouvelles activités</h1> 
+    <!-- Ajout d'un article--> 
     <form action="ajouterarticle.php" method="POST">
       <!-- Formulaire pour ajouter un article -->
       Nom : <input type="text" name="titre" required="required" /><br/>
@@ -27,5 +86,9 @@
       <br/><br/>
       <input type="submit" value="Ajouter l'activité"/>
     </form>
+
+   <!-- modification d'un article déjà fait--> 
+   
+   
   </body>
 </html>
