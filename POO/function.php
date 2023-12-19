@@ -1,8 +1,9 @@
 <?php 
-    function telechargerTous() {
+    function telechargerTous($id_activite) {
+        Participant::$instances = [];
         include("../config/configuration.php");
 		$bdd = new PDO($dsn, $user, $password);
-		$requete = 'SELECT nom, prenom, nom_animal FROM `participants`';
+		$requete = 'SELECT nom, prenom, nom_animal FROM `participants` INNER JOIN participe ON participe.id_participant=participants.id_participant WHERE participe.id_activite='.$id_activite;
 		$resultats = $bdd->query($requete);
     	$tableau = $resultats->fetchAll(); // Récupération des résultats
     	$resultats->closeCursor();
@@ -12,7 +13,7 @@
                 $participant->nom = $tableau[$i]['nom'];
                 $participant->prenom = $tableau[$i]['prenom'];
                 $participant->nom_animal = $tableau[$i]['nom_animal'];
-                self::$instances[] = $participant;
+                Participant::$instances[] = $participant;
             $i++;
         }
     }
