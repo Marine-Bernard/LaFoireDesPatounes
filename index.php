@@ -63,27 +63,6 @@
     </div>
 </div>
 
-
-<?php 
-      for ($i=0; $i<count($Activite); $i++){
-        echo "<h1>". $Activite[$i]["nom"]. '</h1> <a href="pages/activite.php?id='.$Activite[$i]["Id_activite"].'"> <p class="ensavoirplus">En voir plus -> </p></a> <br> <div class="categ">';
-
-      }
-    ?>
-    </p>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
