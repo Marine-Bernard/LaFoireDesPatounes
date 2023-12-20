@@ -36,7 +36,11 @@ class Activite {
 		include("function.php");
 		telechargerTous($this->id_activite);
 		$participants = Participant::$instances;
-		// On mettra le code pour les ajouter au tableau /
+		foreach (Participant::$instances as $participantData) {
+			echo '<tr><td>'.$participantData['nom_prenom'] . ' </td> <td>' . $participantData['nom_animal'] . '</td></tr>';
+		
+    
+		}
 	}
 }
 ?>

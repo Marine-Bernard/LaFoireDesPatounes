@@ -10,6 +10,10 @@ class Participant {
     public function __construct() {
 	}
 
+    public function __toString() {
+        return $this->nom . ' ' . $this->prenom . ' - ' . $this->nom_animal;
+    }
+
     public function telechargerParticipant($id_participant) {
         include("../config/configuration.php");
 		$bdd = new PDO($dsn, $user, $password);
