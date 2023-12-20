@@ -8,10 +8,7 @@
     $requete = 'SELECT * FROM `activite` ORDER BY horaire_deb';
     $resultats = $bdd->query($requete);
     $Activite = $resultats->fetchAll(); // Récupération des résultats
-    $resultats->closeCursor();
-
-
-    
+    $resultats->closeCursor();   
 
 ?>
 
@@ -31,26 +28,60 @@
 </head>
 <body>
 
-<div class="sidebar">
+<div class="sidenav">
   <h3 >Menu</h3>
   <a href="#" >Link 1</a>
   <a href="#">Link 2</a>
   <a href="#">Link 3</a>
 </div>
+<div class="blanc">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" >
+  <path fill="#6a1abb" fill-opacity="1" d="M0,256L30,234.7C60,213,120,171,180,165.3C240,160,300,192,360,186.7C420,181,480,139,540,117.3C600,96,660,96,720,133.3C780,171,840,245,900,245.3C960,245,1020,171,1080,154.7C1140,139,1200,181,1260,186.7C1320,192,1380,160,1410,144L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+  </svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" >
-<path fill="#6a1abb" fill-opacity="1" d="M0,256L30,234.7C60,213,120,171,180,165.3C240,160,300,192,360,186.7C420,181,480,139,540,117.3C600,96,660,96,720,133.3C780,171,840,245,900,245.3C960,245,1020,171,1080,154.7C1140,139,1200,181,1260,186.7C1320,192,1380,160,1410,144L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
-</svg>
+  <h1> Event </h1>
+  <div> La image </div>
+  <img src="" alt="Yoyoyoyo je suis l'image de l'event">
+  <div> colonne de texte 1 </div>
+  <div> colonne de texte 2 </div>
+  <h1> 
+<div>
+<div class="violet">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" >
+  <path fill="#F6F5FF" fill-opacity="1" d="M0,256L30,234.7C60,213,120,171,180,165.3C240,160,300,192,360,186.7C420,181,480,139,540,117.3C600,96,660,96,720,133.3C780,171,840,245,900,245.3C960,245,1020,171,1080,154.7C1140,139,1200,181,1260,186.7C1320,192,1380,160,1410,144L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+  </svg>
+
+  <div class="carroussel">
+    <div class="card">
+      Texte carte 1
+    </div>
+    <div class="card">
+      Blabla carte 2
+    </div>
+    <div class="card">
+      Blabla carte 3
+    </div>
+</div>
+
+
+<?php 
+      for ($i=0; $i<count($Activite); $i++){
+        echo "<h1>". $Activite[$i]["nom"]. '</h1> <a href="pages/activite.php?id='.$Activite[$i]["Id_activite"].'"> <p class="ensavoirplus">En voir plus -> </p></a> <br> <div class="categ">';
+
+      }
+    ?>
+    </p>
+</div>
 
 
 
 
-<h1> Event </h1>
-<div> La image </div>
-<img src="" alt="Yoyoyoyo je suis l'image de l'event">
-<div> colonne de texte 1 </div>
-<div> colonne de texte 2 </div>
-<h1> 
+
+
+
+
+
+
 
 
 
