@@ -48,7 +48,7 @@ $page = new Activite($id);
     <?php echo $page->img ?>
   </div>
 
-  <div> <?php echo $page->description ?> </div>  
+  <div> <?php echo $page->description ?> </div>
 
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style='margin-bottom:-2%;'>
     <path fill="#6a1abb" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -56,36 +56,40 @@ $page = new Activite($id);
   <div class="violet">
     <h2> Liste des participant </h2>
 
-  <table >
-    <thead>
-      <tr>
-        <th>L'humain</th>
-        <th>L'animal</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      $page->tableauParticipants()
-      ?>
-    </tbody>
-  </table>
+    <table>
+      <thead>
+        <tr>
+          <th>L'humain</th>
+          <th>L'animal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $page->tableauParticipants()
+        ?>
+      </tbody>
+    </table>
     <h2> Ajout participant </h2>
 
     <!-- Ajout d'un article-->
     <form action="ajouterparticipant.php" method="POST">
       <!-- Formulaire pour ajouter un article -->
-      <input type="hidden" value="<?php echo $id ?>" name="id_act" />
-      <input type="text" name="nom" placeholder="Votre nom" required="required" /><br />
-      <input type="text" name="prenom" placeholder="Votre prénom" required="required" /><br />
-      <input type="text" name="nom_animal" placeholder="Le nom de votre animal" required="required" /><br />
-      <input type="texte" name="description" placeholder="Dites-nous en plus sur lui" required="required"><br />
+      <div id="formleft">
+        <input type="hidden" value="<?php echo $id ?>" name="id_act" />
+        <input id="formleft" type="text" name="nom" placeholder="Votre nom" required="required" /><br />
+        <input id="formleft" type="text" name="prenom" placeholder="Votre prénom" required="required" /><br />
+        <input id="formleft" type="text" name="nom_animal" placeholder="Le nom de votre animal" required="required" /><br />
+      </div>
+      <textarea type="texte" name="description" placeholder="Dites-nous en plus sur lui" style="width:80% ; height: 20%;" required="required"></textarea><br />
       <br />
+      <div id="envoyer">
       <input type="submit" value="S'inscrire" />
+      </div>
     </form>
   </div>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-top:-1.2%">
-    <path fill="#6a1abb" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,85.3C384,75,480,85,576,80C672,75,768,53,864,69.3C960,85,1056,139,1152,138.7C1248,139,1344,85,1392,58.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-top:-1.2%">
+      <path fill="#6a1abb" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,85.3C384,75,480,85,576,80C672,75,768,53,864,69.3C960,85,1056,139,1152,138.7C1248,139,1344,85,1392,58.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+    </svg>
 
 </body>
 

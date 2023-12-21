@@ -145,16 +145,19 @@ if (isset($_GET['idpart'])) {
     <!-- Ajout d'un article-->
     <form action="ajouteractivite.php" method="POST">
       <!-- Formulaire pour ajouter un article -->
-      <input type="text" name="nom" placeholder="Nom" required="required" /><br />
-      <select name="date" placeholder="Date" required="required">
+      <div id="formleft">
+      <input id="formleft" type="text" name="nom" placeholder="Nom" required="required" /><br />
+      <select id="formleft" name="date" placeholder="Date" required="required">
         <option value="2025-03-01"> Samedi </option>
         <option value="2025-03-02"> Dimanche </option>
       </select><br>
-      <input type="time" name="tdeb" placeholder="Horaire de début" class='champForm' required="required" />
+      <input id="formleft" type="time" name="tdeb" placeholder="Horaire de début" class='champForm' required="required" />
       <input type="time" name="tfin" placeholder="Horaire de fin" required="required" /><br />
-      <input type="text" name="description" placeholder="Description" required="required" /><br />
-      <input type="text" name="minidesc" placeholder="Mini-description" required="required" /><br />
-      image <input type="file" name="img" placeholder="Image" required="required" accept="image/*" /><br />
+      </div>
+      <input type="text" name="description" placeholder="Description"  style="width:80% ; height: 20%;" required="required" /><br />
+      <input type="text" name="minidesc" placeholder="Mini-description"  style="width:80% ;height: 10%;" required="required" /><br />
+      
+      <label>image</label> <input type="file" name="img" placeholder="Image" required="required" accept="image/*" /><br />
       <br/>
       <input type="submit" value="Envoyer" />
     </form>
