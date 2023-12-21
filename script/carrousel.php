@@ -1,17 +1,17 @@
 <script>
 
 var timer = 4000;
+
 var i = 0;
 var max = $('#c > li').length;
-    
-
-	$("#c > li").eq(i).addClass('active').css('left','0');
-	$("#c > li").eq(i + 1).addClass('active').css('left','25%');
-	$("#c > li").eq(i + 2).addClass('active').css('left','50%');
+ 
+	$("#c > li").eq(i).addClass('active').css('left','25%');
+	$("#c > li").eq(i + 1).addClass('active').css('left','50%');
+	$("#c > li").eq(i + 2).addClass('active').css('left','75%');
+	
  
 
 	setInterval(function(){ 
-        console.log(i+1);
 
 		$("#c > li").removeClass('active');
 
@@ -27,12 +27,11 @@ var max = $('#c > li').length;
 			i = 0; 
 		}  
 
-		$("#c > li").eq(i).css('left','0').addClass('active').css('transition-delay','1.25s');
-		$("#c > li").eq(i + 1).css('left','25%').addClass('active').css('transition-delay','1.5s');
-		$("#c > li").eq(i + 2).css('left','50%').addClass('active').css('transition-delay','1.75s');
-
+		$("#c > li").eq(i).css('left','25%').addClass('active').css('transition-delay','1.25s');
+		$("#c > li").eq(i + 1).css('left','50%%').addClass('active').css('transition-delay','1.5s');
+		$("#c > li").eq(i + 2).css('left','75%%').addClass('active').css('transition-delay','1.75s');
+		
 	
 	}, timer);
- 
 
     </script>

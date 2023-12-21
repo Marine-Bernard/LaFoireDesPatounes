@@ -104,19 +104,21 @@
     <!-- Ajout d'un article--> 
     <form action="ajouteractivite.php" method="POST">
       <!-- Formulaire pour ajouter un article -->
-      Nom : <input type="text" name="nom" required="required" /><br/>
-      Description : <input type="text" name="description" required="required" /><br/>
-      Description pour le carroussel : <input type="text" name="minidesc" required="required" /><br/>
-      Image : <input type="file" name="img" required="required" accept="image/*"/><br/>
-      Jour : <select name="date" required="required">
+      <div id="formleft">
+      <input id="formleft" type="text" name="nom" placeholder="Nom" required="required" /><br />
+      <select id="formleft" name="date" placeholder="Date" required="required">
         <option value="2025-03-01"> Samedi </option>
         <option value="2025-03-02"> Dimanche </option>
       </select><br>
-      Horaire de debut: <input type="time" name="tdeb" required="required"/><br/>
-      Horaire de fin: <input type="time" name="tfin" required="required"/><br/>
-
-      <br/><br/>
-      <input type="submit" value="Ajouter l'activité"/>
+      <input id="formleft" type="time" name="tdeb" placeholder="Horaire de début" class='champForm' required="required" />
+      <input type="time" name="tfin" placeholder="Horaire de fin" required="required" /><br />
+      </div>
+      <input type="text" name="description" placeholder="Description"  style="width:80% ; height: 20%;" required="required" /><br />
+      <input type="text" name="minidesc" placeholder="Mini-description"  style="width:80% ;height: 10%;" required="required" /><br />
+      
+      <label>image</label> <input type="file" name="img" placeholder="Image" required="required" accept="image/*" /><br />
+      <br/>
+      <input type="submit" value="Envoyer" />
     </form>
 
    <!-- suppression d'un participant--> 
