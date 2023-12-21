@@ -3,10 +3,11 @@
   src: url(poppins.medium.ttf);
 }
 
-body{
+body {
   margin: 0;
   margin-left: 88px;
   text-align: center;
+  background-color: #E4E9F7;
   font-family: "poppins";
 }
 
@@ -61,7 +62,7 @@ table {
   
 }
 
- }
+ 
 
  ul > li {
    width: 25%;
@@ -102,6 +103,10 @@ table {
    .sidenav a {font-size: 18px;}
  }
 
+
+h1{
+  font-size:3.3vw;
+}
 
 h1{
   font-size:3.3vw;

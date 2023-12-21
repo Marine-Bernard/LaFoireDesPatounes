@@ -73,16 +73,15 @@ $page->tableauParticipants()
 <form action="ajouterparticipant.php" method="POST">
       <!-- Formulaire pour ajouter un article -->
       <div id="formleft">
-        <input type="hidden" value="<?php echo $id?>" name="id_act"/>
-        Votre nom : <input id="formleft" type="text" name="nom" required="required" /><br/>
-        Votre prénom : <input id="formleft" type="text" name="prenom" required="required" /><br/>
-        Nom de l'animal: <input id="formleft" type="text" name="nom_animal" required="required" /><br/>
-      Description de l'animal : </div>
-      <textarea type="texte" name="description" style="width:80% ; height: 20%;" required="required"></textarea><br/>
-  
-      <br/><br/>
+        <input type="hidden" value="<?php echo $id ?>" name="id_act" />
+        <input id="formleft" type="text" name="nom" placeholder="Votre nom" required="required" /><br />
+        <input id="formleft" type="text" name="prenom" placeholder="Votre prénom" required="required" /><br />
+        <input id="formleft" type="text" name="nom_animal" placeholder="Le nom de votre animal" required="required" /><br />
+      </div>
+      <textarea type="texte" name="description" placeholder="Dites-nous en plus sur lui" style="width:80% ; height: 20%;" required="required"></textarea><br />
+      <br />
       <div id="envoyer">
-      <input type="submit" value="S'inscrire"/>
+      <input type="submit" value="S'inscrire" />
       </div>
     </form>
   </div>
