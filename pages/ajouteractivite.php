@@ -9,7 +9,6 @@
     $nom= $_POST["nom"]."\n";
     $description= $_POST["description"]."\n";
     $minidesc= $_POST["minidesc"]."\n";
-    $img= $_POST['img']."\n";
     $date= $_POST["date"]."\n";
     $horaire_deb =$_POST["tdeb"]."\n";
     $horaire_fin =$_POST["tfin"]."\n";
