@@ -22,7 +22,7 @@ if (isset($_GET['idact'])) {
 
 if (isset($_GET['idpart'])) {
   $idpart = $_GET['idpart'];
-  $requete = 'SELECT * FROM Participant INNER JOIN Participe ON Participant.Id_participant = Participe.Id_participant WHERE Id_activite=' . $idpart;
+  $requete = 'SELECT * FROM participant INNER JOIN participe ON participant.Id_participant = participe.Id_participant WHERE Id_activite=' . $idpart;
   $resultats = $bdd->query($requete);
   $part = $resultats->fetchAll();
   $resultats->closeCursor();
