@@ -170,3 +170,7 @@ tbody{
   object-fit: contain;
   max-width: 100%;
 }
+
+#c a {
+  color: white;
+}
