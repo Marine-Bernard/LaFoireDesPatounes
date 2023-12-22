@@ -111,12 +111,12 @@ if (isset($_GET['idpart'])) {
         <h2>Information sur l'activité</h2>
 
         <?php
-        echo '<div> le nom de l\'activité' . $act[0]["nom"] . '</div>' . "\n";
-        echo '<div> La description de l\'activité' . $act[0]["description"] . '</div>' . "\n";
-        echo '<div> description courte' . $act[0]["minidesc"] . '</div>' . "\n";
-        echo '<div> date' . $act[0]["date"] . '</div>' . "\n";
-        echo '<div> horaire deb ' . $act[0]["horaire_deb"] . '</div>' . "\n";
-        echo '<div> horaire fin ' . $act[0]["horaire_fin"] . '</div>' . "\n";
+        echo '<div> le nom de l\'activité : ' . $act[0]["nom"] . '</div>' . "\n";
+        echo '<div> La description de l\'activité : ' . $act[0]["description"] . '</div>' . "\n";
+        echo '<div> Description courte : ' . $act[0]["minidesc"] . '</div>' . "\n";
+        echo '<div> Date : ' . $act[0]["date"] . '</div>' . "\n";
+        echo '<div> Horaire début : ' . $act[0]["horaire_deb"] . '</div>' . "\n";
+        echo '<div> Horaire fin : ' . $act[0]["horaire_fin"] . '</div>' . "\n";
         ?>
       </div>
     <?php } ?>
