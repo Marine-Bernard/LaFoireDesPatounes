@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 20 déc. 2023 à 14:17
--- Version du serveur : 10.4.28-MariaDB
--- Version de PHP : 8.2.4
+-- Généré le : ven. 22 déc. 2023 à 12:50
+-- Version du serveur : 10.4.27-MariaDB
+-- Version de PHP : 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,8 +43,10 @@ CREATE TABLE `activite` (
 --
 
 INSERT INTO `activite` (`Id_activite`, `nom`, `description`, `minidesc`, `img`, `date`, `horaire_deb`, `horaire_fin`) VALUES
-(1, 'Concours de beauté félins\n', 'Y\'a plein de chat\n', 'blabla\n', '\n', '2025-03-01', '09:30:00', '10:30:00'),
-(7, 'Concours de beauté canin', 'il y a plein de chien', '\"bah oui pour baudry\"', '', '2025-03-01', '15:30:00', '16:30:00');
+(1, 'Concours de beauté félins\n', 'Hey les fans de chats ! On vous invite au Salon Félin Glamour, le lieu où chaque chat est une star. Notre concours de beauté pour chats est une vraie fête pour les amoureux de félins. Les juges pros vont scruter chaque poil et chaque pas avec style.\r\n\r\nDes catégories comme \"La queue la plus majestueuse\" et \"La grâce en action\" font monter l\'excitation. Les gagnants repartent avec des prix spéciaux. Au Salon Félin Glamour, on adore nos amis félins et on veut le montrer !\r\n\r\n', 'On vous invite au Salon Félin Glamour, le lieu où chaque chat est une star.', '1x/Plan de travail 1.png', '2025-03-01', '09:30:00', '10:30:00'),
+(7, 'Concours de beauté canin', 'Salut les amis des chiens ! Bienvenue au Salon Canin Élégance, là où on célèbre la classe des toutous. Notre concours de beauté pour chiens est super chic. Si t\'as un chien stylé, c\'est l\'occasion parfaite !\r\n\r\nDes juges pros vont regarder chaque chien sous toutes les coutures, de la truffe à la queue. Il y a des catégories cool comme \"La plus belle coiffure\" et \"L\'élégance en mouvement\". Les gagnants repartent avec des prix géniaux. Le Salon Canin Élégance, c\'est l\'endroit où l\'on met la beauté des chiens à l\'honneur !\r\n', 'Salut les amis des chiens ! Bienvenue au Salon Canin Élégance, là où on célèbre la classe des toutous.', '1x/Plan de travail 1_1.png', '2025-03-01', '15:30:00', '16:30:00'),
+(8, 'rhyy', 'egthe', 'trbnt', 'gbr', '2025-03-01', '09:30:00', '17:00:00'),
+(9, 'Course Canine', 'Salut les fans de chiens qui aiment bouger ! Préparez-vous à une journée de folie au Salon Sportif pour Chiens Intrépides avec notre Course Canine. Si t\'as un chien rapide et plein d\'énergie, c\'est l\'occasion de briller !\r\n\r\nLe parcours a des obstacles trop marrants. Des virages serrés, des sauts cool et des tunnels existants. Les chiens les plus rapides remportent des prix géniaux. Au Salon Sportif pour Chiens Intrépides, on célèbre le fun et l\'énergie de nos amis canins. Venez nombreux pour une journée pleine de joie et d\'action !\r\n', 'Salut les fans de chiens qui aiment bouger !', '1x/Plan de travail 1_2.png', '2025-03-02', '09:30:00', '17:00:00');
 
 -- --------------------------------------------------------
 
@@ -66,7 +68,8 @@ CREATE TABLE `participant` (
 
 INSERT INTO `participant` (`Id_participant`, `nom`, `prenom`, `nom_animal`, `info_animal`) VALUES
 (1, 'Borné', 'Léa', 'Baudry', 'C\'est mon chien depuis peu cependant je l\'ai bien dresser a aboyer'),
-(2, 'Souche', 'Aurore', 'Arthur ', 'Allergique au poil de ses congénères ils ne supportent pas les autres animaux. Surtout pas Baudry, en même les chats et les chiens ne sont pas copains ');
+(2, 'Souche', 'Aurore', 'Arthur ', 'Allergique au poil de ses congénères ils ne supportent pas les autres animaux. Surtout pas Baudry, en même les chats et les chiens ne sont pas copains '),
+(17, 'Bernard', 'Marine', 'Trifouilli', 'Trifouilli aussi appelé trifouille, la magouille, est classé premier dans le coeur de la team');
 
 -- --------------------------------------------------------
 
@@ -85,6 +88,7 @@ CREATE TABLE `participe` (
 
 INSERT INTO `participe` (`Id_activite`, `Id_participant`) VALUES
 (1, 2),
+(1, 17),
 (7, 1),
 (7, 4),
 (7, 12);
@@ -120,24 +124,29 @@ ALTER TABLE `participe`
 -- AUTO_INCREMENT pour la table `activite`
 --
 ALTER TABLE `activite`
-  MODIFY `Id_activite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id_activite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `participant`
 --
 ALTER TABLE `participant`
-  MODIFY `Id_participant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `Id_participant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Contraintes pour les tables déchargées
 --
 
 --
+-- Contraintes pour la table `participant`
+--
+ALTER TABLE `participant`
+  ADD CONSTRAINT `participant_ibfk_1` FOREIGN KEY (`Id_participant`) REFERENCES `participe` (`Id_participant`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Contraintes pour la table `participe`
 --
 ALTER TABLE `participe`
-  ADD CONSTRAINT `participe_ibfk_1` FOREIGN KEY (`Id_participant`) REFERENCES `participant` (`id_participant`),
-  ADD CONSTRAINT `participe_ibfk_2` FOREIGN KEY (`Id_activite`) REFERENCES `activite` (`Id_activite`);
+  ADD CONSTRAINT `participe_ibfk_1` FOREIGN KEY (`Id_activite`) REFERENCES `activite` (`Id_activite`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

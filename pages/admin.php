@@ -36,7 +36,7 @@ if (isset($_GET['idpart'])) {
 <head>
   <meta charset="UTF-8">
   <title>La Foire Des Patounes</title>
-  <link rel="icon" type="image/x-icon" href="img/IcoClub.jpg"> <!-- changer icon -->
+  <link rel="icon" type="image/x-icon" href="../images/1x/logo noir.png"> <!-- changer icon -->
   <meta name="description" content="Voici la page de La Foire des Patounes ce projet a pour but de financer la SPA ! ">
   <!-- Début de la balise <meta> pour la vue mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,11 +45,16 @@ if (isset($_GET['idpart'])) {
 </head>
 
 <body>
-  <div class="sidenav">
-    <h3>Menu</h3>
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+<div class="sidenav">
+    <img class="imglogo"src="../images/logo spa.svg"></br>
+    <img style="background-color: #F6F5FF;" src="../images/1.svg"></br>
+    <a href="../index.php"><img src="../images/2.svg"></a></br>
+    <img src="../images/3.svg"></br>
+    <img src="../images/4.svg"></br>
+    <img src="../images/5.svg"></br>
+    <img src="../images/6.svg"></br>
+    <img src="../images/7.svg"></br>
+    <img src="../images/8.svg"></br>
   </div>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path fill="#6a1abb" fill-opacity="1" d="M0,256L30,234.7C60,213,120,171,180,165.3C240,160,300,192,360,186.7C420,181,480,139,540,117.3C600,96,660,96,720,133.3C780,171,840,245,900,245.3C960,245,1020,171,1080,154.7C1140,139,1200,181,1260,186.7C1320,192,1380,160,1410,144L1440,128L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
@@ -109,7 +114,6 @@ if (isset($_GET['idpart'])) {
         echo '<div> le nom de l\'activité' . $act[0]["nom"] . '</div>' . "\n";
         echo '<div> La description de l\'activité' . $act[0]["description"] . '</div>' . "\n";
         echo '<div> description courte' . $act[0]["minidesc"] . '</div>' . "\n";
-        echo '<div> image' . $act[0]["img"] . '</div>' . "\n";
         echo '<div> date' . $act[0]["date"] . '</div>' . "\n";
         echo '<div> horaire deb ' . $act[0]["horaire_deb"] . '</div>' . "\n";
         echo '<div> horaire fin ' . $act[0]["horaire_fin"] . '</div>' . "\n";
@@ -132,7 +136,6 @@ if (isset($_GET['idpart'])) {
         Nom : <input type="text" name="nom" required="required" value="<?php echo $act[0]["nom"] ?>" onFocus="this.value='';" /><br />
         Description : <input type="text" name="description" required="required" value="<?php echo $act[0]["description"] ?>" onFocus="this.value='';" /><br />
         Description pour le carroussel : <input type="text" name="minidesc" required="required" value="<?php echo $act[0]["minidesc"] ?>" onFocus="this.value='';" /><br />
-        Image : <input type="file" name="img" accept="image/*" value="$act[0]['img']" onFocus="this.value='';" /><br />
         Jour : <select name="date" required="required">
           <option value="2025-03-01"> Samedi </option>
           <option value="2025-03-02"> Dimanche </option>
@@ -160,8 +163,6 @@ if (isset($_GET['idpart'])) {
       </div>
       <input type="text" name="description" placeholder="Description"  style="width:80% ;" required="required" /><br />
       <input type="text" name="minidesc" placeholder="Mini-description"  style="width:80% ;" required="required" /><br />
-      
-      <label>image</label> <input type="file" name="img" placeholder="Image" required="required" accept="image/*" /><br />
       <br/>
       <input type="submit" value="Envoyer" />
     </form>

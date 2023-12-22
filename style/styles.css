@@ -155,3 +155,18 @@ input{
 tbody{
   text-align:center;
 }
+.container {
+  max-width: 800px;
+}
+
+.baniere {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 10%;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  max-width: 100%;
+}

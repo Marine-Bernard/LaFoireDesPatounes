@@ -5,15 +5,13 @@
 <head>
   <meta charset="UTF-8">
   <title>La Foire Des Patounes</title>
-  <link rel="icon" type="image/x-icon" href="img/IcoClub.jpg"> <!-- changer icon -->
+  <link rel="icon" type="image/x-icon" href="images/1x/logo noir.png"> <!-- changer icon -->
   <meta name="description" content="Voici la page de La Foire des Patounes ce projet a pour but de financer la SPA ! ">
   <!-- Début de la balise <meta> pour la vue mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Inclusion de votre propre fichier CSS -->
   <link rel="stylesheet" href="style/styles.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-
 
 </head>
 
@@ -64,10 +62,15 @@ if (isset($_GET['Jour'])) {
     </svg>
 
     <h1> Event </h1>
-    <div> La image </div>
-    <img src="" alt="Yoyoyoyo je suis l'image de l'event">
-    <div> colonne de texte 1 </div>
-    <div> colonne de texte 2 </div>
+  
+    <img src="images/1x/event.png" class="baniere">
+    <div> La Foire des Patounes, un événement novateur orchestré par la SPA (Société Protectrice des Animaux) de Haute-Loire, s'épanouira en début d'année 2025, précisément les 1er et 2 mars. Ce salon, conçu dans l'optique de générer des fonds cruciaux pour soutenir les actions de l'association, se destine à un public varié : les amoureux des animaux, les familles, les éleveurs, les professionnels du secteur animalier, et toute personne portant un intérêt aux concours de beauté féline et canine, ou simplement aux animaux en général. <br>
+
+L'événement se déroule à la Salle des Fêtes de Saint-Paulien, offrant un espace convivial tant pour les participants que pour les visiteurs, avec une zone en plein air dédiée aux animaux. Les activités variées comprennent des concours de beauté féline où les participants s'inscriront en ligne, une compétition dynamique de Course Canine avec inscription en ligne également, des expositions et stands regroupant des associations partenaires, des services vétérinaires et des artistes animaliers.<br>
+
+Pour enrichir l'expérience, des animations participatives telles que des ateliers interactifs, des démonstrations de dressage, des conseils d'experts, et des séances photos avec des animaux à adopter seront proposées. Une tombola mettra en jeu des articles pour animaux et des produits sponsorisés, tandis qu'un photographe ambulant capturera les moments précieux du salon pour les partager sur Instagram. De plus, un dessinateur proposera ses talents pour réaliser des portraits des participants en échange de dons. L'objectif est de créer une atmosphère chaleureuse, festive et engageante, favorisant ainsi la collecte de fonds pour la noble cause défendue par la SPA.<br>
+</div>
+    
 
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style='margin-bottom:-2%;'>
@@ -77,7 +80,7 @@ if (isset($_GET['Jour'])) {
         <ul id="c">
           <?php
           foreach ($aff as $value) {
-            echo '<li> <h3><strong>' . $value["nom"] . '</strong></h3><h3>' . $value["minidesc"] . '</h3></li>';
+            echo '<li> <h3><strong>' . $value["nom"] . '</strong></h3><h3>' . $value["minidesc"] . '</h3> <a href="pages/activite.php?id='.$value["Id_activite"].'">En voir plus ! </a></li>';
           }
           ?>
         </ul>
