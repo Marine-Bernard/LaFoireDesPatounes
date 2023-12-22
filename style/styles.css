@@ -19,7 +19,7 @@ body {
    z-index: 1; /* Stay on top */
    top: 0; /* Stay at the top */
    left: 0;
-   background-color: #F6F5FF; 
+   background-color: #ffffff; 
    overflow-x: hidden; /* Disable horizontal scroll */
    padding-top: 20px;
  }
@@ -38,10 +38,6 @@ body {
    color: #f1f1f1;
  }
  
- .blanc{
-   background-color: #F6F5FF;
- }
- 
  .violet{
    background-color: #6a1abb;
  }
@@ -53,15 +49,21 @@ body {
 
 
 
-table {
+.listetable {
   color: #E4E9F7;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
   border: solid;
-  
 }
-
+table {
+  background-color: #6a1abb;
+  color: #E4E9F7;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border: solid;
+}
  
 
  ul > li {
@@ -83,7 +85,7 @@ table {
  p {
    font-family: sans-serif;
    font-size: 13px;
-   color: #646566;
+   color: #E4E9F7;
    line-height: 1.5em;
  }
 
@@ -94,32 +96,37 @@ table {
    line-height: 100px; 
  }
 
- .tableau{
-   padding-top: 50%;
- }
  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
  @media screen and (max-height: 450px) {
    .sidenav {padding-top: 15px;}
    .sidenav a {font-size: 18px;}
  }
 
-
+img{
+  width: 20%;
+  margin:20%;
+}
+.imglogo{
+  width:45%;
+  margin-top:-6%;
+  margin-bottom: 48%;
+}
 h1{
   font-size:3.3vw;
 }
 
-h1{
-  font-size:3.3vw;
-}
 
 h2{
   margin-left:10%;
   text-align: left;
+  color:#E4E9F7;
 }
-
+h3{
+  font-size:1.5vw;
+  color:#E4E9F7}
 
 input{
-  margin-bottom:1.3%;
+  margin-bottom:2%;
   font-family: "poppins";
 }
 
@@ -132,6 +139,19 @@ input{
   text-align:left;
 }
 #envoyer{
-  margin-right:5.1%;
+  margin-right:10%;
   text-align:end;
+}
+.violetcarrousel{
+  background-color: #6a1abb;
+  color:#E4E9F7;
+  height:600px;
+}
+
+.noir{
+  color:#000000;
+}
+
+tbody{
+  text-align:center;
 }

@@ -32,7 +32,7 @@ class Activite {
 	}
 
 	public function tableauParticipants() {
-		include("Participant.php");
+		include("participant.php");
 		include("function.php");
 		telechargerTous($this->id_activite);
 		$participants = Participant::$instances;

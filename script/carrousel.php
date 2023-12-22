@@ -5,9 +5,9 @@ var timer = 4000;
 var i = 0;
 var max = $('#c > li').length;
  
-	$("#c > li").eq(i).addClass('active').css('left','25%');
-	$("#c > li").eq(i + 1).addClass('active').css('left','50%');
-	$("#c > li").eq(i + 2).addClass('active').css('left','75%');
+	$("#c > li").eq(i).addClass('active').css('left','10%');
+	$("#c > li").eq(i + 1).addClass('active').css('left','42%');
+	$("#c > li").eq(i + 2).addClass('active').css('left','70%');
 	
  
 
